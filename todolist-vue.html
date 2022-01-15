@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todolist</title>
+    <script src="vue.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="todolist">
+        <h1>todolist</h1>
+        <div class="firstBox">
+            <h2>new task</h2>
+            <input type="text" class="input" v-model="content">
+            <span><input type="button" value="添加" @click="addList(index)"/></span>
+        </div>
+        <div class="secondBox">
+            <h2>to do tasks</h2>
+            <div v-for="(item,index) of arr" :key="index" class="duiqi">
+                {{item.list}}<input type="button" value="删除" @click="deleteList(index)" /><input type="button" value="修改" @click="modification(index)" />
+            </div>
+        </div>
+        <img src="6.jpg" alt="">
+    </div>
+    <script>
+        new Vue({
+            el: '#todolist',
+            data: {
+                content: '',
+                arr: []
+            },
+            methods: {
+                addList: function() {
+                    if (this.content == '') alert("请输入内容");
+                    else {
+                        const a = {
+                            z: false,
+                            list: this.content
+                        }
+                        this.arr.push(a) //添加数组
+                        this.content = '';
+                    }
+                },
+                deleteList: function(index) {
+                    this.arr.splice(index, 1) //删除数组
+                },
+                modification(index) {
+                    const b = prompt("请输入修改的内容~");
+                    console.log(b);
+                    this.arr[index].list = b;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

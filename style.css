@@ -1,0 +1,59 @@
+ body {
+     background-color: #e6dddd;
+ }
+ 
+ h1 {
+     text-align: center;
+     font-style: italic;
+     font-size: 80px;
+ }
+ 
+ h2 {
+     text-align: center;
+     font-style: italic;
+     font-size: 45px;
+ }
+ 
+ .firstBox {
+     text-align: center;
+     float: left;
+     width: 600px;
+ }
+ 
+ .secondBox {
+     text-align: center;
+     float: right;
+     width: 365px;
+     padding: 0 80px;
+     white-space: normal;
+     word-break: break-all;
+     text-overflow: ellipsis;
+ }
+ 
+ .btn {
+     width: 100px;
+     height: 40px;
+     background: pink;
+     border: none;
+ }
+ 
+ a {
+     border: black;
+     color: rgb(110, 11, 11);
+     text-decoration: none;
+ }
+ 
+ li {
+     text-align: left;
+ }
+ 
+ img {
+     width: 245px;
+     position: fixed;
+     left: 42%;
+     top: 38%;
+ }
+ 
+ .duiqi {
+     text-align: left;
+ }

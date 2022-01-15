@@ -19,7 +19,7 @@
         </div>
         <div class="secondBox">
             <h2>to do tasks</h2>
-            <div v-for="(item,index) of arr" :key="index" class="duiqi">
+            <div v-for="(item,index) of arr" :key="this.num" class="duiqi">
                 {{item.list}}<input type="button" value="删除" @click="deleteList(index)" /><input type="button" value="修改" @click="modification(index)" />
             </div>
         </div>
@@ -30,14 +30,14 @@
             el: '#todolist',
             data: {
                 content: '',
-                arr: []
+                arr: [],
+                num: 0
             },
             methods: {
                 addList: function() {
                     if (this.content == '') alert("请输入内容");
                     else {
                         const a = {
-                            z: false,
                             list: this.content
                         }
                         this.arr.push(a) //添加数组
@@ -45,12 +45,12 @@
                     }
                 },
                 deleteList: function(index) {
-                    this.arr.splice(index, 1) //删除数组
+                    this.arr.splice(this.num, 1) //删除数组
                 },
                 modification(index) {
                     const b = prompt("请输入修改的内容~");
                     console.log(b);
-                    this.arr[index].list = b;
+                    this.arr[this.num].list = b;
                 }
             }
         })
